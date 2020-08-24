@@ -1,0 +1,13 @@
+---
+
+image_name: "bhavya633/app-info"
+
+version: "2.0"
+
+username: "bhavya633"
+
+password: "Geddada123*"
+
+source_file: "docker-compose.yml"
+
+base_dir: "/home/ubuntu"

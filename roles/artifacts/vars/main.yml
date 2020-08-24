@@ -1,0 +1,12 @@
+---
+home_dir: "/home/ubuntu"
+
+my_buket: "bhavya-app-info"
+
+ARTIFACT_ID: "appinfo"
+
+ARTIFACT_VERSION: "2020.1"
+
+ARTIFACT_DIR: "{{home_dir}}/"
+
+is_source_is_remote: "yes"

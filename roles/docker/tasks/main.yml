@@ -1,0 +1,19 @@
+---
+- name: Log into DockerHub
+  docker_login:
+    username: "{{ username }}"
+    password: " {{ password }}"
+
+- name: pull an image
+  docker_image:
+    name: "{{ image_name }}"
+    tag: "{{ version }}"
+    source: pull
+
+- name: coping docker compose
+  copy:
+    src: "{{ source_file }}"
+    dst: "{{ base_dir }}"
+
+- name: Run containers using compose
+  shell: "docker-compose up -d"
