@@ -58,11 +58,8 @@
     </target>
 
     <!--Creating docker image-->
-    <target name="create-docker-stage">
-        <mkdir dir="${docker.app}/install" />
-    </target>
-
-    <target name="copy-artifacts-to-docker-stage" >
+	
+    <target name="copy-artifacts-to-docker" >
         <copy todir="${docker.app}/install">
             <fileset dir="${artifact.dir}/" />
         </copy>
@@ -77,17 +74,7 @@
         </exec>
     </target>
 
-    <target name="docker-login" depends="docker-image">
-        <exec dir="${docker.app}" executable="docker">
-            <arg value="login" />
-            <arg value="-u" />
-            <arg value="${username}" />
-            <arg value="-p" />
-            <arg value="${password}" />
-        </exec>
-    </target>
-
-    <target name="docker-push" depends="docker-login">
+    <target name="docker-push" depends="docker-image">
         <exec dir="${docker.app}" executable="docker">
             <arg value="push" />
             <arg value="${docker.image}:${version}" />
