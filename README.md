@@ -7,11 +7,16 @@ The project uses maven to build the artifacts. After that we're deploying our ar
 Prerequisites
 ----
 Launch EC2 instance
+
 ANT
+
 Maven
+
 Jenkins
+
 Docker
-Add Jenkins user to docker group or give give 666 permission to /var/run/docker.sock 
+
+Add Jenkins user to docker group (or) give give 666 permission to /var/run/docker.sock 
 
 
 Maven
