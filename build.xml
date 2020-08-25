@@ -9,7 +9,8 @@
     <property name="docker.app" location="docker" />
     <property name="bucket.name" value="s3://bhavya-app-info/" />
     <property name="docker.image" value="bhavya633/app-info" />
-    <property name="version" value="1.0" />
+	<property name="artifact.id" value="appinfo" />
+    <property name="version" value="2020.1" />
 
     <!-- Deletes the existing build, docs and dist directory-->
     <target name="clean">
@@ -43,8 +44,8 @@
 
     <!-- Archive war file-->
     <target name="archive-artifacts" depends="make-archive-app">
-        <tar destfile="${archive.app}/App-Info.tar" basedir="${artifact.dir}" />
-        <gzip destfile="${archive.app}/App-Info.tar.gz" src="${archive.app}/App-Info.tar" />
+        <tar destfile="${archive.app}/${artifact.id}-${version}.tar" basedir="${artifact.dir}" />
+        <gzip destfile="${archive.app}/${artifact.id}-${version}.tar.gz" src="${archive.app}/${artifact.id}-${version}.tar" />
     </target>
 
     <!--copying artifacts to s3-->
@@ -65,7 +66,7 @@
         </copy>
     </target>
 
-    <target name="docker-image" depends="copy-artifacts-to-docker-stage">
+    <target name="docker-image" depends="copy-artifacts-to-docker">
         <exec dir="${docker.app}" executable="docker">
             <arg value="build"/>
             <arg value="-t" />
