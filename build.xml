@@ -7,9 +7,9 @@
     <property name="artifact.dir" location="install" />
     <property name="archive.app" location="tar" />
     <property name="docker.app" location="docker" />
-    <property name="bucket.name" value="s3://bhavya-app-info/" />
-    <property name="docker.image" value="bhavya633/app-info" />
-	<property name="artifact.id" value="appinfo" />
+    <property name="bucket.name" value="s3://appinfo-artifactory-bharath/" />
+    <property name="docker.image" value="bharathpantala/appinfoops" />
+    <property name="artifact.id" value="appinfo" />
     <property name="version" value="2020.1" />
 
     <!-- Deletes the existing build, docs and dist directory-->
