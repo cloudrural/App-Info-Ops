@@ -55,6 +55,7 @@
              <arg value="cp" />
              <arg value="App-Info.tar.gz" />
              <arg value="${bucket.name}" />
+             <arg value="--profile=bharath" />
         </exec>
     </target>
 
